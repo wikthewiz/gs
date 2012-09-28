@@ -1,4 +1,4 @@
 gs
 ==
 
-A language for scrpting GDB commands
+A language for scripting GDB commands
