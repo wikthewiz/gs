@@ -4,7 +4,7 @@ import com.google.inject.Inject
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
-import org.eclipse.xtext.xbase.XBlockExpression
+import org.arccore.gdbsl.gdbsl.Script
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -44,20 +44,16 @@ class GdbslJvmModelInferrer extends AbstractModelInferrer {
 	 *            rely on linking using the index if isPreIndexingPhase is
 	 *            <code>true</code>.
 	 */
-   	def dispatch void infer(XBlockExpression element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
-   		// Here you explain how your model is mapped to Java elements, by writing the actual translation code.
-   		
-   		// An implementation for the initial hello world example could look like this:
-//   		acceptor.accept(element.toClass("my.company.greeting.MyGreetings"))
-//   			.initializeLater([
-//   				for (greeting : element.greetings) {
-//   					members += greeting.toMethod("hello" + greeting.name, greeting.newTypeRef(typeof(String))) [
-//   						body = [
-//   							append('''return "Hello «greeting.name»";''')
-//   						]
-//   					]
-//   				}
-//   			])
-   	}
+
+   	def dispatch void infer(Script script, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+   		val className = script.eResource.URI.trimFileExtension.lastSegment
+   		acceptor.accept(script.toClass(className)).initializeLater [
+   			members += script.toMethod('main', script.newTypeRef(Void::TYPE)) [
+   				parameters += script.toParameter("args", script.newTypeRef(typeof(String)).addArrayTypeDimension)
+   				setStatic(true)
+   				body = script
+   			]	
+   		]
+  	}
 }
 

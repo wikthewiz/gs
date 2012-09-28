@@ -4,12 +4,30 @@
 package org.arccore.gdbsl.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.ui.refactoring.ui.DefaultRenameSupport;
+import org.eclipse.xtext.ui.refactoring.ui.IRenameSupport;
 
 /**
  * Use this class to register components to be used within the IDE.
  */
+@SuppressWarnings("restriction")
 public class GdbslUiModule extends org.arccore.gdbsl.ui.AbstractGdbslUiModule {
 	public GdbslUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
+	}
+	
+
+	public Class<? extends IRenameSupport.Factory> bindIRenameSupport$Factory() {
+		return DefaultRenameSupport.Factory.class;
+	}
+	
+	@Override
+	public Class<? extends org.eclipse.xtext.common.types.access.IJvmTypeProvider.Factory> bindIJvmTypeProvider$Factory() {
+		return org.eclipse.xtext.common.types.access.ClasspathTypeProviderFactory.class;
+	}
+
+	@Override
+	public Class<? extends org.eclipse.xtext.common.types.xtext.AbstractTypeScopeProvider> bindAbstractTypeScopeProvider() {
+		return org.eclipse.xtext.common.types.xtext.ClasspathBasedTypeScopeProvider.class;
 	}
 }
