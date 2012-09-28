@@ -1,0 +1,9 @@
+grammar org.arccore.gdbsl.GdbSl with org.eclipse.xtext.common.Terminals
+
+generate gdbSl "http://www.arccore.org/gdbsl/GdbSl"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
