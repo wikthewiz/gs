@@ -1,10 +1,10 @@
-module org.arccore.gdbsl.GenerateGdbSl
+module org.arccore.gdbsl.GenerateGdbsl
 
 import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
-var grammarURI = "classpath:/org/arccore/gdbsl/GdbSl.xtext"
+var grammarURI = "classpath:/org/arccore/gdbsl/Gdbsl.xtext"
 var file.extensions = "gdbsl"
 var projectName = "org.arccore.gdbsl"
 var runtimeProject = "../${projectName}"
