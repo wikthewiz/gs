@@ -67,8 +67,8 @@ public class GdbslFactoryImpl extends EFactoryImpl implements GdbslFactory
   {
     switch (eClass.getClassifierID())
     {
-      case GdbslPackage.MODEL: return createModel();
-      case GdbslPackage.GREETING: return createGreeting();
+      case GdbslPackage.IMPORT: return createImport();
+      case GdbslPackage.SCRIPT: return createScript();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -79,10 +79,10 @@ public class GdbslFactoryImpl extends EFactoryImpl implements GdbslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Model createModel()
+  public Import createImport()
   {
-    ModelImpl model = new ModelImpl();
-    return model;
+    ImportImpl import_ = new ImportImpl();
+    return import_;
   }
 
   /**
@@ -90,10 +90,10 @@ public class GdbslFactoryImpl extends EFactoryImpl implements GdbslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Greeting createGreeting()
+  public Script createScript()
   {
-    GreetingImpl greeting = new GreetingImpl();
-    return greeting;
+    ScriptImpl script = new ScriptImpl();
+    return script;
   }
 
   /**

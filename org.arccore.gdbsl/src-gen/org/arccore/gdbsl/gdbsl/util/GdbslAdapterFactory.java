@@ -14,6 +14,9 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.xtext.xbase.XBlockExpression;
+import org.eclipse.xtext.xbase.XExpression;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
@@ -78,14 +81,24 @@ public class GdbslAdapterFactory extends AdapterFactoryImpl
     new GdbslSwitch<Adapter>()
     {
       @Override
-      public Adapter caseModel(Model object)
+      public Adapter caseImport(Import object)
       {
-        return createModelAdapter();
+        return createImportAdapter();
       }
       @Override
-      public Adapter caseGreeting(Greeting object)
+      public Adapter caseScript(Script object)
       {
-        return createGreetingAdapter();
+        return createScriptAdapter();
+      }
+      @Override
+      public Adapter caseXExpression(XExpression object)
+      {
+        return createXExpressionAdapter();
+      }
+      @Override
+      public Adapter caseXBlockExpression(XBlockExpression object)
+      {
+        return createXBlockExpressionAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -110,31 +123,61 @@ public class GdbslAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link org.arccore.gdbsl.gdbsl.Model <em>Model</em>}'.
+   * Creates a new adapter for an object of class '{@link org.arccore.gdbsl.gdbsl.Import <em>Import</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.arccore.gdbsl.gdbsl.Model
+   * @see org.arccore.gdbsl.gdbsl.Import
    * @generated
    */
-  public Adapter createModelAdapter()
+  public Adapter createImportAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.arccore.gdbsl.gdbsl.Greeting <em>Greeting</em>}'.
+   * Creates a new adapter for an object of class '{@link org.arccore.gdbsl.gdbsl.Script <em>Script</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.arccore.gdbsl.gdbsl.Greeting
+   * @see org.arccore.gdbsl.gdbsl.Script
    * @generated
    */
-  public Adapter createGreetingAdapter()
+  public Adapter createScriptAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.eclipse.xtext.xbase.XExpression <em>XExpression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.eclipse.xtext.xbase.XExpression
+   * @generated
+   */
+  public Adapter createXExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.eclipse.xtext.xbase.XBlockExpression <em>XBlock Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.eclipse.xtext.xbase.XBlockExpression
+   * @generated
+   */
+  public Adapter createXBlockExpressionAdapter()
   {
     return null;
   }

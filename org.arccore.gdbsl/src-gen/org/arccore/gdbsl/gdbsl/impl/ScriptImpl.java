@@ -8,8 +8,8 @@ package org.arccore.gdbsl.gdbsl.impl;
 import java.util.Collection;
 
 import org.arccore.gdbsl.gdbsl.GdbslPackage;
-import org.arccore.gdbsl.gdbsl.Greeting;
-import org.arccore.gdbsl.gdbsl.Model;
+import org.arccore.gdbsl.gdbsl.Import;
+import org.arccore.gdbsl.gdbsl.Script;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -18,42 +18,42 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.xtext.xbase.impl.XBlockExpressionImpl;
+
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Model</b></em>'.
+ * An implementation of the model object '<em><b>Script</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.arccore.gdbsl.gdbsl.impl.ModelImpl#getGreetings <em>Greetings</em>}</li>
+ *   <li>{@link org.arccore.gdbsl.gdbsl.impl.ScriptImpl#getImports <em>Imports</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ModelImpl extends MinimalEObjectImpl.Container implements Model
+public class ScriptImpl extends XBlockExpressionImpl implements Script
 {
   /**
-   * The cached value of the '{@link #getGreetings() <em>Greetings</em>}' containment reference list.
+   * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getGreetings()
+   * @see #getImports()
    * @generated
    * @ordered
    */
-  protected EList<Greeting> greetings;
+  protected EList<Import> imports;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ModelImpl()
+  protected ScriptImpl()
   {
     super();
   }
@@ -66,7 +66,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   @Override
   protected EClass eStaticClass()
   {
-    return GdbslPackage.Literals.MODEL;
+    return GdbslPackage.Literals.SCRIPT;
   }
 
   /**
@@ -74,13 +74,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Greeting> getGreetings()
+  public EList<Import> getImports()
   {
-    if (greetings == null)
+    if (imports == null)
     {
-      greetings = new EObjectContainmentEList<Greeting>(Greeting.class, this, GdbslPackage.MODEL__GREETINGS);
+      imports = new EObjectContainmentEList<Import>(Import.class, this, GdbslPackage.SCRIPT__IMPORTS);
     }
-    return greetings;
+    return imports;
   }
 
   /**
@@ -93,8 +93,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case GdbslPackage.MODEL__GREETINGS:
-        return ((InternalEList<?>)getGreetings()).basicRemove(otherEnd, msgs);
+      case GdbslPackage.SCRIPT__IMPORTS:
+        return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -109,8 +109,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case GdbslPackage.MODEL__GREETINGS:
-        return getGreetings();
+      case GdbslPackage.SCRIPT__IMPORTS:
+        return getImports();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -126,9 +126,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case GdbslPackage.MODEL__GREETINGS:
-        getGreetings().clear();
-        getGreetings().addAll((Collection<? extends Greeting>)newValue);
+      case GdbslPackage.SCRIPT__IMPORTS:
+        getImports().clear();
+        getImports().addAll((Collection<? extends Import>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -144,8 +144,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case GdbslPackage.MODEL__GREETINGS:
-        getGreetings().clear();
+      case GdbslPackage.SCRIPT__IMPORTS:
+        getImports().clear();
         return;
     }
     super.eUnset(featureID);
@@ -161,10 +161,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case GdbslPackage.MODEL__GREETINGS:
-        return greetings != null && !greetings.isEmpty();
+      case GdbslPackage.SCRIPT__IMPORTS:
+        return imports != null && !imports.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //ModelImpl
+} //ScriptImpl

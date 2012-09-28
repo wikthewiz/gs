@@ -6,7 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: org.arccore.gdbsl; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext;visibility:=reexport,
- org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
+ org.eclipse.xtext.xbase;visibility:=reexport,
  org.eclipse.xtext.generator;resolution:=optional,
  org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional,
  org.eclipse.emf.codegen.ecore;resolution:=optional,
@@ -16,17 +16,20 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.emf.ecore,
  org.eclipse.emf.common,
  org.antlr.runtime,
- org.eclipse.xtext.common.types
+ org.eclipse.xtext.common.types,
+ org.eclipse.xtext.xbase.lib
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.arccore.gdbsl,
- org.arccore.gdbsl.services,
  org.arccore.gdbsl.gdbsl,
  org.arccore.gdbsl.gdbsl.impl,
  org.arccore.gdbsl.gdbsl.util,
- org.arccore.gdbsl.serializer,
+ org.arccore.gdbsl.generator,
+ org.arccore.gdbsl.interpreter,
+ org.arccore.gdbsl.jvmmodel,
  org.arccore.gdbsl.parser.antlr,
  org.arccore.gdbsl.parser.antlr.internal,
  org.arccore.gdbsl.scoping,
- org.arccore.gdbsl.generator
+ org.arccore.gdbsl.serializer,
+ org.arccore.gdbsl.services

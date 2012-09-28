@@ -10,6 +10,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.xtext.xbase.XbasePackage;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Package</b> for the model.
@@ -60,103 +62,112 @@ public interface GdbslPackage extends EPackage
   GdbslPackage eINSTANCE = org.arccore.gdbsl.gdbsl.impl.GdbslPackageImpl.init();
 
   /**
-   * The meta object id for the '{@link org.arccore.gdbsl.gdbsl.impl.ModelImpl <em>Model</em>}' class.
+   * The meta object id for the '{@link org.arccore.gdbsl.gdbsl.impl.ImportImpl <em>Import</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.arccore.gdbsl.gdbsl.impl.ModelImpl
-   * @see org.arccore.gdbsl.gdbsl.impl.GdbslPackageImpl#getModel()
+   * @see org.arccore.gdbsl.gdbsl.impl.ImportImpl
+   * @see org.arccore.gdbsl.gdbsl.impl.GdbslPackageImpl#getImport()
    * @generated
    */
-  int MODEL = 0;
+  int IMPORT = 0;
 
   /**
-   * The feature id for the '<em><b>Greetings</b></em>' containment reference list.
+   * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__GREETINGS = 0;
+  int IMPORT__IMPORTED_NAMESPACE = 0;
 
   /**
-   * The number of structural features of the '<em>Model</em>' class.
+   * The number of structural features of the '<em>Import</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 1;
+  int IMPORT_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.arccore.gdbsl.gdbsl.impl.GreetingImpl <em>Greeting</em>}' class.
+   * The meta object id for the '{@link org.arccore.gdbsl.gdbsl.impl.ScriptImpl <em>Script</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.arccore.gdbsl.gdbsl.impl.GreetingImpl
-   * @see org.arccore.gdbsl.gdbsl.impl.GdbslPackageImpl#getGreeting()
+   * @see org.arccore.gdbsl.gdbsl.impl.ScriptImpl
+   * @see org.arccore.gdbsl.gdbsl.impl.GdbslPackageImpl#getScript()
    * @generated
    */
-  int GREETING = 1;
+  int SCRIPT = 1;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GREETING__NAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Greeting</em>' class.
+   * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GREETING_FEATURE_COUNT = 1;
+  int SCRIPT__EXPRESSIONS = XbasePackage.XBLOCK_EXPRESSION__EXPRESSIONS;
+
+  /**
+   * The feature id for the '<em><b>Imports</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCRIPT__IMPORTS = XbasePackage.XBLOCK_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Script</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCRIPT_FEATURE_COUNT = XbasePackage.XBLOCK_EXPRESSION_FEATURE_COUNT + 1;
 
 
   /**
-   * Returns the meta object for class '{@link org.arccore.gdbsl.gdbsl.Model <em>Model</em>}'.
+   * Returns the meta object for class '{@link org.arccore.gdbsl.gdbsl.Import <em>Import</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Model</em>'.
-   * @see org.arccore.gdbsl.gdbsl.Model
+   * @return the meta object for class '<em>Import</em>'.
+   * @see org.arccore.gdbsl.gdbsl.Import
    * @generated
    */
-  EClass getModel();
+  EClass getImport();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.arccore.gdbsl.gdbsl.Model#getGreetings <em>Greetings</em>}'.
+   * Returns the meta object for the attribute '{@link org.arccore.gdbsl.gdbsl.Import#getImportedNamespace <em>Imported Namespace</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Greetings</em>'.
-   * @see org.arccore.gdbsl.gdbsl.Model#getGreetings()
-   * @see #getModel()
+   * @return the meta object for the attribute '<em>Imported Namespace</em>'.
+   * @see org.arccore.gdbsl.gdbsl.Import#getImportedNamespace()
+   * @see #getImport()
    * @generated
    */
-  EReference getModel_Greetings();
+  EAttribute getImport_ImportedNamespace();
 
   /**
-   * Returns the meta object for class '{@link org.arccore.gdbsl.gdbsl.Greeting <em>Greeting</em>}'.
+   * Returns the meta object for class '{@link org.arccore.gdbsl.gdbsl.Script <em>Script</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Greeting</em>'.
-   * @see org.arccore.gdbsl.gdbsl.Greeting
+   * @return the meta object for class '<em>Script</em>'.
+   * @see org.arccore.gdbsl.gdbsl.Script
    * @generated
    */
-  EClass getGreeting();
+  EClass getScript();
 
   /**
-   * Returns the meta object for the attribute '{@link org.arccore.gdbsl.gdbsl.Greeting#getName <em>Name</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.arccore.gdbsl.gdbsl.Script#getImports <em>Imports</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.arccore.gdbsl.gdbsl.Greeting#getName()
-   * @see #getGreeting()
+   * @return the meta object for the containment reference list '<em>Imports</em>'.
+   * @see org.arccore.gdbsl.gdbsl.Script#getImports()
+   * @see #getScript()
    * @generated
    */
-  EAttribute getGreeting_Name();
+  EReference getScript_Imports();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -182,40 +193,40 @@ public interface GdbslPackage extends EPackage
   interface Literals
   {
     /**
-     * The meta object literal for the '{@link org.arccore.gdbsl.gdbsl.impl.ModelImpl <em>Model</em>}' class.
+     * The meta object literal for the '{@link org.arccore.gdbsl.gdbsl.impl.ImportImpl <em>Import</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.arccore.gdbsl.gdbsl.impl.ModelImpl
-     * @see org.arccore.gdbsl.gdbsl.impl.GdbslPackageImpl#getModel()
+     * @see org.arccore.gdbsl.gdbsl.impl.ImportImpl
+     * @see org.arccore.gdbsl.gdbsl.impl.GdbslPackageImpl#getImport()
      * @generated
      */
-    EClass MODEL = eINSTANCE.getModel();
+    EClass IMPORT = eINSTANCE.getImport();
 
     /**
-     * The meta object literal for the '<em><b>Greetings</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Imported Namespace</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__GREETINGS = eINSTANCE.getModel_Greetings();
+    EAttribute IMPORT__IMPORTED_NAMESPACE = eINSTANCE.getImport_ImportedNamespace();
 
     /**
-     * The meta object literal for the '{@link org.arccore.gdbsl.gdbsl.impl.GreetingImpl <em>Greeting</em>}' class.
+     * The meta object literal for the '{@link org.arccore.gdbsl.gdbsl.impl.ScriptImpl <em>Script</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.arccore.gdbsl.gdbsl.impl.GreetingImpl
-     * @see org.arccore.gdbsl.gdbsl.impl.GdbslPackageImpl#getGreeting()
+     * @see org.arccore.gdbsl.gdbsl.impl.ScriptImpl
+     * @see org.arccore.gdbsl.gdbsl.impl.GdbslPackageImpl#getScript()
      * @generated
      */
-    EClass GREETING = eINSTANCE.getGreeting();
+    EClass SCRIPT = eINSTANCE.getScript();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GREETING__NAME = eINSTANCE.getGreeting_Name();
+    EReference SCRIPT__IMPORTS = eINSTANCE.getScript_Imports();
 
   }
 

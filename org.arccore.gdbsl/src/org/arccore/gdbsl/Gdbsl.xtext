@@ -1,9 +1,14 @@
-grammar org.arccore.gdbsl.Gdbsl with org.eclipse.xtext.common.Terminals
+grammar org.arccore.gdbsl.Gdbsl with org.eclipse.xtext.xbase.Xbase
 
 generate gdbsl "http://www.arccore.org/gdbsl/Gdbsl"
+import "http://www.eclipse.org/xtext/xbase/Xbase"
 
-Model:
-	greetings+=Greeting*;
+Script returns XBlockExpression:
+	{Script}
+	((expressions+=XExpressionInsideBlock | imports+=Import) ';'?)*;
+
+Import:
+	'import' importedNamespace=QualifiedNameWithWildcard;
 	
-Greeting:
-	'Hello' name=ID '!';
+QualifiedNameWithWildcard:
+	QualifiedName '.*'?;

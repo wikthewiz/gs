@@ -6,7 +6,7 @@
 package org.arccore.gdbsl.gdbsl.impl;
 
 import org.arccore.gdbsl.gdbsl.GdbslPackage;
-import org.arccore.gdbsl.gdbsl.Greeting;
+import org.arccore.gdbsl.gdbsl.Import;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -17,45 +17,45 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Greeting</b></em>'.
+ * An implementation of the model object '<em><b>Import</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.arccore.gdbsl.gdbsl.impl.GreetingImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.arccore.gdbsl.gdbsl.impl.ImportImpl#getImportedNamespace <em>Imported Namespace</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeting
+public class ImportImpl extends MinimalEObjectImpl.Container implements Import
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getImportedNamespace() <em>Imported Namespace</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getImportedNamespace()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final String IMPORTED_NAMESPACE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getImportedNamespace() <em>Imported Namespace</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getImportedNamespace()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected String importedNamespace = IMPORTED_NAMESPACE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected GreetingImpl()
+  protected ImportImpl()
   {
     super();
   }
@@ -68,7 +68,7 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   @Override
   protected EClass eStaticClass()
   {
-    return GdbslPackage.Literals.GREETING;
+    return GdbslPackage.Literals.IMPORT;
   }
 
   /**
@@ -76,9 +76,9 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public String getImportedNamespace()
   {
-    return name;
+    return importedNamespace;
   }
 
   /**
@@ -86,12 +86,12 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  public void setImportedNamespace(String newImportedNamespace)
   {
-    String oldName = name;
-    name = newName;
+    String oldImportedNamespace = importedNamespace;
+    importedNamespace = newImportedNamespace;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GdbslPackage.GREETING__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, GdbslPackage.IMPORT__IMPORTED_NAMESPACE, oldImportedNamespace, importedNamespace));
   }
 
   /**
@@ -104,8 +104,8 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case GdbslPackage.GREETING__NAME:
-        return getName();
+      case GdbslPackage.IMPORT__IMPORTED_NAMESPACE:
+        return getImportedNamespace();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +120,8 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case GdbslPackage.GREETING__NAME:
-        setName((String)newValue);
+      case GdbslPackage.IMPORT__IMPORTED_NAMESPACE:
+        setImportedNamespace((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +137,8 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case GdbslPackage.GREETING__NAME:
-        setName(NAME_EDEFAULT);
+      case GdbslPackage.IMPORT__IMPORTED_NAMESPACE:
+        setImportedNamespace(IMPORTED_NAMESPACE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +154,8 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case GdbslPackage.GREETING__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case GdbslPackage.IMPORT__IMPORTED_NAMESPACE:
+        return IMPORTED_NAMESPACE_EDEFAULT == null ? importedNamespace != null : !IMPORTED_NAMESPACE_EDEFAULT.equals(importedNamespace);
     }
     return super.eIsSet(featureID);
   }
@@ -171,10 +171,10 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (importedNamespace: ");
+    result.append(importedNamespace);
     result.append(')');
     return result.toString();
   }
 
-} //GreetingImpl
+} //ImportImpl

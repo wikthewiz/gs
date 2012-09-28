@@ -6,14 +6,14 @@
     modelPluginID="org.arccore.gdbsl" forceOverwrite="true" modelName="Gdbsl" updateClasspath="false"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" complianceLevel="5.0"
     copyrightFields="false" editPluginID="org.arccore.gdbsl.edit" editorPluginID="org.arccore.gdbsl.editor"
-    runtimeVersion="2.7">
+    runtimeVersion="2.7" usedGenPackages="../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
   <genPackages prefix="Gdbsl" basePackage="org.arccore.gdbsl" disposableProviderFactory="true"
       ecorePackage="Gdbsl.ecore#/">
-    <genClasses ecoreClass="Gdbsl.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Gdbsl.ecore#//Model/greetings"/>
+    <genClasses ecoreClass="Gdbsl.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gdbsl.ecore#//Import/importedNamespace"/>
     </genClasses>
-    <genClasses ecoreClass="Gdbsl.ecore#//Greeting">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gdbsl.ecore#//Greeting/name"/>
+    <genClasses ecoreClass="Gdbsl.ecore#//Script">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Gdbsl.ecore#//Script/imports"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

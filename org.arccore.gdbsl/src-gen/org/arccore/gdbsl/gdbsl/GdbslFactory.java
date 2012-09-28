@@ -26,22 +26,22 @@ public interface GdbslFactory extends EFactory
   GdbslFactory eINSTANCE = org.arccore.gdbsl.gdbsl.impl.GdbslFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Model</em>'.
+   * Returns a new object of class '<em>Import</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Model</em>'.
+   * @return a new object of class '<em>Import</em>'.
    * @generated
    */
-  Model createModel();
+  Import createImport();
 
   /**
-   * Returns a new object of class '<em>Greeting</em>'.
+   * Returns a new object of class '<em>Script</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Greeting</em>'.
+   * @return a new object of class '<em>Script</em>'.
    * @generated
    */
-  Greeting createGreeting();
+  Script createScript();
 
   /**
    * Returns the package supported by this factory.

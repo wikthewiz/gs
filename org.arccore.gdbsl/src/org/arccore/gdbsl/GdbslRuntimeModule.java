@@ -6,6 +6,12 @@ package org.arccore.gdbsl;
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
+@SuppressWarnings("restriction")
 public class GdbslRuntimeModule extends org.arccore.gdbsl.AbstractGdbslRuntimeModule {
 
+	@Override
+	public Class<? extends org.eclipse.xtext.xbase.interpreter.IExpressionInterpreter> bindIExpressionInterpreter() {
+		return org.arccore.gdbsl.interpreter.GdbslInterpreter.class;
+	}
+	
 }

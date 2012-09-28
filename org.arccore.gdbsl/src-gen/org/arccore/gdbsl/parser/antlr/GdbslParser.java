@@ -25,7 +25,7 @@ public class GdbslParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrPar
 	
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Model";
+		return "Script";
 	}
 	
 	public GdbslGrammarAccess getGrammarAccess() {

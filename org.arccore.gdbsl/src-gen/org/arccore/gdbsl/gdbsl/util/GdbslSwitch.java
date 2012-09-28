@@ -12,6 +12,9 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import org.eclipse.xtext.xbase.XBlockExpression;
+import org.eclipse.xtext.xbase.XExpression;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Switch</b> for the model's inheritance hierarchy.
@@ -75,17 +78,19 @@ public class GdbslSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
-      case GdbslPackage.MODEL:
+      case GdbslPackage.IMPORT:
       {
-        Model model = (Model)theEObject;
-        T result = caseModel(model);
+        Import import_ = (Import)theEObject;
+        T result = caseImport(import_);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case GdbslPackage.GREETING:
+      case GdbslPackage.SCRIPT:
       {
-        Greeting greeting = (Greeting)theEObject;
-        T result = caseGreeting(greeting);
+        Script script = (Script)theEObject;
+        T result = caseScript(script);
+        if (result == null) result = caseXBlockExpression(script);
+        if (result == null) result = caseXExpression(script);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -94,33 +99,65 @@ public class GdbslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Model</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Import</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Model</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Import</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseModel(Model object)
+  public T caseImport(Import object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Greeting</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Script</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Greeting</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Script</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseGreeting(Greeting object)
+  public T caseScript(Script object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>XExpression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>XExpression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseXExpression(XExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>XBlock Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>XBlock Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseXBlockExpression(XBlockExpression object)
   {
     return null;
   }

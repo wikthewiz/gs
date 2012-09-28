@@ -7,8 +7,8 @@ package org.arccore.gdbsl.gdbsl.impl;
 
 import org.arccore.gdbsl.gdbsl.GdbslFactory;
 import org.arccore.gdbsl.gdbsl.GdbslPackage;
-import org.arccore.gdbsl.gdbsl.Greeting;
-import org.arccore.gdbsl.gdbsl.Model;
+import org.arccore.gdbsl.gdbsl.Import;
+import org.arccore.gdbsl.gdbsl.Script;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -16,6 +16,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.eclipse.xtext.xbase.XbasePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,14 +32,14 @@ public class GdbslPackageImpl extends EPackageImpl implements GdbslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass modelEClass = null;
+  private EClass importEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass greetingEClass = null;
+  private EClass scriptEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -87,6 +89,9 @@ public class GdbslPackageImpl extends EPackageImpl implements GdbslPackage
 
     isInited = true;
 
+    // Initialize simple dependencies
+    XbasePackage.eINSTANCE.eClass();
+
     // Create package meta-data objects
     theGdbslPackage.createPackageContents();
 
@@ -107,9 +112,9 @@ public class GdbslPackageImpl extends EPackageImpl implements GdbslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getModel()
+  public EClass getImport()
   {
-    return modelEClass;
+    return importEClass;
   }
 
   /**
@@ -117,9 +122,9 @@ public class GdbslPackageImpl extends EPackageImpl implements GdbslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Greetings()
+  public EAttribute getImport_ImportedNamespace()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)importEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -127,9 +132,9 @@ public class GdbslPackageImpl extends EPackageImpl implements GdbslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getGreeting()
+  public EClass getScript()
   {
-    return greetingEClass;
+    return scriptEClass;
   }
 
   /**
@@ -137,9 +142,9 @@ public class GdbslPackageImpl extends EPackageImpl implements GdbslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGreeting_Name()
+  public EReference getScript_Imports()
   {
-    return (EAttribute)greetingEClass.getEStructuralFeatures().get(0);
+    return (EReference)scriptEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -172,11 +177,11 @@ public class GdbslPackageImpl extends EPackageImpl implements GdbslPackage
     isCreated = true;
 
     // Create classes and their features
-    modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__GREETINGS);
+    importEClass = createEClass(IMPORT);
+    createEAttribute(importEClass, IMPORT__IMPORTED_NAMESPACE);
 
-    greetingEClass = createEClass(GREETING);
-    createEAttribute(greetingEClass, GREETING__NAME);
+    scriptEClass = createEClass(SCRIPT);
+    createEReference(scriptEClass, SCRIPT__IMPORTS);
   }
 
   /**
@@ -203,18 +208,22 @@ public class GdbslPackageImpl extends EPackageImpl implements GdbslPackage
     setNsPrefix(eNS_PREFIX);
     setNsURI(eNS_URI);
 
+    // Obtain other dependent packages
+    XbasePackage theXbasePackage = (XbasePackage)EPackage.Registry.INSTANCE.getEPackage(XbasePackage.eNS_URI);
+
     // Create type parameters
 
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    scriptEClass.getESuperTypes().add(theXbasePackage.getXBlockExpression());
 
     // Initialize classes and features; add operations and parameters
-    initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Greetings(), this.getGreeting(), null, "greetings", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(greetingEClass, Greeting.class, "Greeting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGreeting_Name(), ecorePackage.getEString(), "name", null, 0, 1, Greeting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(scriptEClass, Script.class, "Script", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getScript_Imports(), this.getImport(), null, "imports", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);
