@@ -68,10 +68,10 @@ Workflow {
                 }
     
                 // java-based API for validation
-                fragment = validation.JavaValidatorFragment {
+                // fragment = validation.JavaValidatorFragment {
                 //    composedCheck = "org.eclipse.xtext.validation.ImportUriValidator"
                 //    composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
-                }
+                // }
     
                 // scoping and exporting API
                 // fragment = scoping.ImportURIScopingFragment {}
@@ -89,23 +89,23 @@ Workflow {
                 }
     
                 // formatter API
-                fragment = formatting.FormatterFragment {}
+                // fragment = formatting.FormatterFragment {}
     
                 // labeling API
-                fragment = labeling.LabelProviderFragment {}
+                // fragment = labeling.LabelProviderFragment {}
     
                 // outline API
-                fragment = outline.OutlineTreeProviderFragment {}
-                fragment = outline.QuickOutlineFragment {}
+                // fragment = outline.OutlineTreeProviderFragment {}
+                // fragment = outline.QuickOutlineFragment {}
     
                 // quickfix API
-                fragment = quickfix.QuickfixProviderFragment {}
+                // fragment = quickfix.QuickfixProviderFragment {}
     
                 // content assist API
-                fragment = contentAssist.JavaBasedContentAssistFragment {}
+                // fragment = contentAssist.JavaBasedContentAssistFragment {}
     
                 // generates a more lightweight Antlr parser and lexer tailored for content assist
-                fragment = parser.antlr.XtextAntlrUiGeneratorFragment {}
+                // fragment = parser.antlr.XtextAntlrUiGeneratorFragment {}
     
                 // generates junit test support classes into Generator#pathTestProject
                 fragment = junit.Junit4Fragment {}
@@ -117,7 +117,7 @@ Workflow {
                 // }
     
                 // rename refactoring
-                fragment = refactoring.RefactorElementNameFragment {}
+                // fragment = refactoring.RefactorElementNameFragment {}
     
                 // provides the necessary bindings for java types integration
                 fragment = types.TypesGeneratorFragment {}
@@ -126,12 +126,12 @@ Workflow {
                 fragment = xbase.XbaseGeneratorFragment {}
     
                 // provides a preference page for template proposals
-                fragment = templates.CodetemplatesGeneratorFragment {}
+                // fragment = templates.CodetemplatesGeneratorFragment {}
     
                 // provides a compare view
-                fragment = compare.CompareFragment {
-                     fileExtensions = file.extensions
-                }
+                // fragment = compare.CompareFragment {
+                //      fileExtensions = file.extensions
+                // }
     
             }
         }
